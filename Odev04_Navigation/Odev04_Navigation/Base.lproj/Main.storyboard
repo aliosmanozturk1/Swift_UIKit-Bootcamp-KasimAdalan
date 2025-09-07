@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I5Q-Tz-d7y">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Odev04_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Root View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfP-Eb-byH">
+                                <rect key="frame" x="89.666666666666686" y="262" width="214" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKt-vi-leo">
+                                <rect key="frame" x="151" y="472" width="91" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: A">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oGn-sc-07O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-Bf-9Fi">
+                                <rect key="frame" x="151" y="540" width="91" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: X">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoX:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nl7-ly-bHj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zKt-vi-leo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3HV-Bu-Ck9"/>
+                            <constraint firstItem="EB0-Bf-9Fi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="40d-qe-yBB"/>
+                            <constraint firstItem="PfP-Eb-byH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="85B-ig-bcO"/>
+                            <constraint firstItem="EB0-Bf-9Fi" firstAttribute="top" secondItem="zKt-vi-leo" secondAttribute="bottom" constant="20" id="KdR-s1-Vme"/>
+                            <constraint firstItem="PfP-Eb-byH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="TzH-io-ucm"/>
+                            <constraint firstItem="zKt-vi-leo" firstAttribute="top" secondItem="PfP-Eb-byH" secondAttribute="bottom" constant="150" id="ZR4-Va-VgU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Root View" id="CYj-jr-PhD"/>
+                    <connections>
+                        <segue destination="bE1-aE-6h5" kind="show" identifier="pageA" id="jCG-dI-sWA"/>
+                        <segue destination="ecD-FT-F2W" kind="show" identifier="pageX" id="UdF-5s-ayS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066.4122137404579" y="4.9295774647887329"/>
+        </scene>
+        <!--Page A-->
+        <scene sceneID="HaS-Eq-epC">
+            <objects>
+                <viewController id="bE1-aE-6h5" customClass="PageAViewController" customModule="Odev04_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="beQ-TL-2Z0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxX-T1-h9W">
+                                <rect key="frame" x="122" y="262" width="149" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XV-TH-1DU">
+                                <rect key="frame" x="151.66666666666666" y="472" width="90" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: B">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoB:" destination="bE1-aE-6h5" eventType="touchUpInside" id="Pac-M5-vLr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2FC-Ye-L3f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dxX-T1-h9W" firstAttribute="centerX" secondItem="beQ-TL-2Z0" secondAttribute="centerX" id="9qX-WG-s7D"/>
+                            <constraint firstItem="dxX-T1-h9W" firstAttribute="centerX" secondItem="beQ-TL-2Z0" secondAttribute="centerX" id="KLO-Ph-AKY"/>
+                            <constraint firstItem="dxX-T1-h9W" firstAttribute="top" secondItem="2FC-Ye-L3f" secondAttribute="top" constant="100" id="ReM-j2-2Al"/>
+                            <constraint firstItem="7XV-TH-1DU" firstAttribute="top" secondItem="dxX-T1-h9W" secondAttribute="bottom" constant="150" id="Xab-TG-upd"/>
+                            <constraint firstItem="7XV-TH-1DU" firstAttribute="centerX" secondItem="beQ-TL-2Z0" secondAttribute="centerX" id="ke0-mH-5Ho"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Page A" id="HCc-gb-j5U"/>
+                    <connections>
+                        <segue destination="wy4-Gk-jHj" kind="show" identifier="pageB" id="9Ff-yZ-keg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xp4-QM-E3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="-342"/>
+        </scene>
+        <!--Page B-->
+        <scene sceneID="031-Yh-Rgx">
+            <objects>
+                <viewController id="wy4-Gk-jHj" customClass="PageBViewController" customModule="Odev04_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tn4-s8-LVQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ6-yo-4M0">
+                                <rect key="frame" x="122.66666666666669" y="262" width="148" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OY4-DK-Jc9">
+                                <rect key="frame" x="151.66666666666666" y="472" width="90" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: Y">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoY:" destination="wy4-Gk-jHj" eventType="touchUpInside" id="oZa-gC-nNt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tM9-oK-rPu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bJ6-yo-4M0" firstAttribute="centerX" secondItem="tn4-s8-LVQ" secondAttribute="centerX" id="DeN-1E-K7g"/>
+                            <constraint firstItem="OY4-DK-Jc9" firstAttribute="centerX" secondItem="tn4-s8-LVQ" secondAttribute="centerX" id="DtV-3j-NaC"/>
+                            <constraint firstItem="OY4-DK-Jc9" firstAttribute="top" secondItem="bJ6-yo-4M0" secondAttribute="bottom" constant="150" id="Ofk-8Q-TDF"/>
+                            <constraint firstItem="bJ6-yo-4M0" firstAttribute="top" secondItem="tM9-oK-rPu" secondAttribute="top" constant="100" id="VSq-Kd-2i9"/>
+                            <constraint firstItem="bJ6-yo-4M0" firstAttribute="centerX" secondItem="tn4-s8-LVQ" secondAttribute="centerX" id="f6k-9X-JNh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Page B" id="BXj-RN-wZm"/>
+                    <connections>
+                        <segue destination="NTk-h0-89r" kind="show" identifier="pageBtoPageY" id="8yJ-Hh-NCe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKg-Ic-kit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="-342"/>
+        </scene>
+        <!--Page Y-->
+        <scene sceneID="AFk-4k-mWO">
+            <objects>
+                <viewController id="NTk-h0-89r" customClass="PageYViewController" customModule="Odev04_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="exj-uf-xyq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDQ-xT-quM">
+                                <rect key="frame" x="122.66666666666669" y="262" width="148" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xA-Mw-W54">
+                                <rect key="frame" x="132" y="540" width="129" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: Root">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoRoot:" destination="NTk-h0-89r" eventType="touchUpInside" id="oqL-Bv-qNv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GX-og-y4M">
+                                <rect key="frame" x="130" y="472" width="133" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: Back">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoBack:" destination="NTk-h0-89r" eventType="touchUpInside" id="42O-Pn-2mN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="16v-9d-UZ6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YDQ-xT-quM" firstAttribute="top" secondItem="16v-9d-UZ6" secondAttribute="top" constant="100" id="9X4-Tv-u4J"/>
+                            <constraint firstItem="2xA-Mw-W54" firstAttribute="centerX" secondItem="exj-uf-xyq" secondAttribute="centerX" id="EJa-Pc-9I0"/>
+                            <constraint firstItem="YDQ-xT-quM" firstAttribute="centerX" secondItem="exj-uf-xyq" secondAttribute="centerX" id="J2x-xa-g5K"/>
+                            <constraint firstItem="2xA-Mw-W54" firstAttribute="top" secondItem="8GX-og-y4M" secondAttribute="bottom" constant="20" id="POF-iR-cVj"/>
+                            <constraint firstItem="8GX-og-y4M" firstAttribute="top" secondItem="YDQ-xT-quM" secondAttribute="bottom" constant="150" id="QRZ-0b-x3R"/>
+                            <constraint firstItem="8GX-og-y4M" firstAttribute="centerX" secondItem="exj-uf-xyq" secondAttribute="centerX" id="c1g-1n-UvE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Page Y" id="kAo-75-2mi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCO-7l-qTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2645" y="353"/>
+        </scene>
+        <!--Page X-->
+        <scene sceneID="zEO-cb-nZq">
+            <objects>
+                <viewController id="ecD-FT-F2W" customClass="PageXViewController" customModule="Odev04_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8V4-if-Vbs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-NS-HK1">
+                                <rect key="frame" x="122" y="262" width="149" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbe-5s-rPX">
+                                <rect key="frame" x="151.66666666666666" y="472" width="90" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go: Y">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGoY:" destination="ecD-FT-F2W" eventType="touchUpInside" id="1VL-q6-bd7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mUq-gi-f5k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cbe-5s-rPX" firstAttribute="top" secondItem="Dvj-NS-HK1" secondAttribute="bottom" constant="150" id="46J-8E-gbp"/>
+                            <constraint firstItem="Dvj-NS-HK1" firstAttribute="centerX" secondItem="8V4-if-Vbs" secondAttribute="centerX" id="Ixd-CD-v2T"/>
+                            <constraint firstItem="Dvj-NS-HK1" firstAttribute="centerX" secondItem="8V4-if-Vbs" secondAttribute="centerX" id="jhM-H6-F6W"/>
+                            <constraint firstItem="cbe-5s-rPX" firstAttribute="centerX" secondItem="8V4-if-Vbs" secondAttribute="centerX" id="wi7-iB-Hu1"/>
+                            <constraint firstItem="Dvj-NS-HK1" firstAttribute="top" secondItem="mUq-gi-f5k" secondAttribute="top" constant="100" id="ynI-ry-hN5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Page X" id="q3M-qA-tQf"/>
+                    <connections>
+                        <segue destination="NTk-h0-89r" kind="show" identifier="pageXtoPageY" id="F1B-V6-9Di"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vu9-mB-mLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869" y="353"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ihU-cH-sJi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I5Q-Tz-d7y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wle-S6-GHh">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pQs-ng-61S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6p2-Rc-dA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="F1B-V6-9Di"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
