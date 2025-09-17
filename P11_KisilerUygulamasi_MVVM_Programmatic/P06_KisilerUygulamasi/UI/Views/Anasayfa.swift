@@ -9,8 +9,8 @@ import UIKit
 
 class Anasayfa: UIViewController {
 
-    @IBOutlet weak var searchBar: UISearchBar! // Bunu kullanmak için class'ına UISearchBarDelegate protocolünü ekle.
-    @IBOutlet weak var kisilerTableView: UITableView!
+    private var searchBar: UISearchBar! // Bunu kullanmak için class'ına UISearchBarDelegate protocolünü ekle.
+    private var kisilerTableView: UITableView!
     
     var kisilerListesi: [Kisiler] = []
     
@@ -18,9 +18,11 @@ class Anasayfa: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
-        kisilerTableView.delegate = self
-        kisilerTableView.dataSource = self
+        
+        setupUI()
+        setupConstraints()
+        setupNavigationBar()
+        setupDelegates()
         
         _ = viewModel.kisilerListesi.subscribe(onNext: {liste in // Dinleme
             self.kisilerListesi = liste
@@ -33,16 +35,51 @@ class Anasayfa: UIViewController {
         viewModel.kisileriYukle()
         
     }
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetay" {
-            if let kisi = sender as? Kisiler {
-                let gidilecekVC = segue.destination as! KisiDetay
-                gidilecekVC.kisi = kisi
-            }
-        }
+    
+    private func setupUI() {
+        view.backgroundColor = .systemBackground
+        
+        searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        kisilerTableView = UITableView()
+        kisilerTableView.translatesAutoresizingMaskIntoConstraints = false
+        kisilerTableView.rowHeight = 100
+        kisilerTableView.register(KisilerHucre.self, forCellReuseIdentifier: "kisilerHucre") // GELCEZ BURAYA TODO
+        
+        view.addSubview(searchBar)
+        view.addSubview(kisilerTableView)
     }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            kisilerTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            kisilerTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            kisilerTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            kisilerTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    private func setupDelegates() {
+        searchBar.delegate = self
+        kisilerTableView.delegate = self
+        kisilerTableView.dataSource = self
+    }
+    
+    private func setupNavigationBar() {
+        title = "Kişiler"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    }
+    
+    @objc private func addButtonTapped() {
+        let kisiKayit = KisiKayit()
+        navigationController?.pushViewController(kisiKayit, animated: true)
+    }
+
 }
 
 extension Anasayfa: UISearchBarDelegate {
@@ -71,7 +108,10 @@ extension Anasayfa: UITableViewDelegate, UITableViewDataSource {
         let kisi = kisilerListesi[indexPath.row]
         print("\(kisi.kisi_ad!) seçildi.")
         
-        performSegue(withIdentifier: "toDetay", sender: kisi)
+        let kisiDetay = KisiDetay()
+        kisiDetay.kisi = kisi
+        navigationController?.pushViewController(kisiDetay, animated: true)
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -96,4 +136,8 @@ extension Anasayfa: UITableViewDelegate, UITableViewDataSource {
         
         return UISwipeActionsConfiguration(actions: [silAction])
     }
+}
+
+#Preview {
+    Anasayfa()
 }
